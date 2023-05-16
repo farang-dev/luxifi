@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Request an Item</h1>
+  <%= simple_form_for @booking do |f| %>
+    <%= f.date_select(:start_date,:start_year => 2022) %>
+    <%= f.date_select(:end_date,:start_year => 2022) %>
+    <%= f.submit %>
+  <% end %>
+</div>
