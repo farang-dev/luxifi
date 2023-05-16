@@ -1,11 +1,11 @@
-class BookingsPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
 
   def index?
-    @record.user == user
+    true
   end
 
   def show?
-    @record.user == user
+    true
   end
 
   def new?
@@ -13,7 +13,7 @@ class BookingsPolicy < ApplicationPolicy
   end
 
   def create?
-    @record.user == user
+    true
   end
 
   def edit?
@@ -26,8 +26,8 @@ class BookingsPolicy < ApplicationPolicy
 
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 end

@@ -1,35 +1,38 @@
 class BookingsController < ApplicationController
   def index
-    # authorize @bookings
+    @bookings = policy_scope(Booking)
   end
 
   def show
-    # authorize @booking
+    authorize(@booking)
   end
 
   def new
-    # authorize @booking
     @item = Item.find(params[:item_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
-    # authorize @booking
+    @item = Item.find(params[:item_id])
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
+    @booking.user = current_user
+    @booking.item = @item
+    authorize(@booking)
     if @booking.save
-      redirect_to item_bookings_path
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    authorize @booking
+    authorize(@booking)
   end
 
   def update
-    authorize @booking
+    authorize(@booking)
   end
 
   private

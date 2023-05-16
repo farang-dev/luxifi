@@ -1,5 +1,9 @@
 class ItemPolicy < ApplicationPolicy
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -15,7 +19,7 @@ class ItemPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      return Item.all
+      scope.all
     end
   end
 end
