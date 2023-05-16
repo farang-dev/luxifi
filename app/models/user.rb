@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :items
+  has_many :bookings
+  has_many :bookings_as_owner, through: :items, source: :bookings
 end
