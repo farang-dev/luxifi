@@ -2,9 +2,13 @@
 # Could add these to CATEGORY but keeping it small for now
 
 class Item < ApplicationRecord
-  belongs_to :user
   has_many :bookings
+  belongs_to :user
   CATEGORY = ["Wears", "Bags", "Accessories"]
-  validates :item, inclusion: { in: CATEGORY }
-  validates :brand, :price, :category, :name, :gender, presence: true
+  validates :category, inclusion: { in: CATEGORY }
+  validates :brand, presence: true
+  validates :price, presence: true
+  validates :category, presence: true
+  validates :name, presence: true
+  validates :gender, presence: true
 end
