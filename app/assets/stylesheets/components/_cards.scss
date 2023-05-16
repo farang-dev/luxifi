@@ -1,15 +1,15 @@
 .item-card {
-  // height: 400px;
-  // width: 280px;
+  width: 280px;
   // overflow: hidden;
   background-color: white;
   margin-top: 3px;
   border: 1px $gray solid;
 }
 
-.item-card > img {
+.item-card img {
   // position: absolute;
   // height: 300px;
+
   width: 100%;
   // box-sizing: border-box;
   border-bottom: 1px $gray solid;
