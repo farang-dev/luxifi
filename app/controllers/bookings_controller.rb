@@ -9,10 +9,18 @@ class BookingsController < ApplicationController
 
   def new
     authorize @booking
+    @booking = Booking.new
   end
 
   def create
     authorize @booking
+    @booking = Booking.new(booking_params)
+    @booking.status = "pending"
+    if @booking.save
+      redirect_to item_bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -21,5 +29,11 @@ class BookingsController < ApplicationController
 
   def update
     authorize @booking
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :comment)
   end
 end
