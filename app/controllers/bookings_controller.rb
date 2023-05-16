@@ -1,19 +1,19 @@
 class BookingsController < ApplicationController
   def index
-    authorize @bookings
+    # authorize @bookings
   end
 
   def show
-    authorize @booking
+    # authorize @booking
   end
 
   def new
-    authorize @booking
-    @booking = Booking.new
+    # authorize @booking
+    @booking = Booking.new(@item)
   end
 
   def create
-    authorize @booking
+    # authorize @booking
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
     if @booking.save
