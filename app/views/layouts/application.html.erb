@@ -6,15 +6,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= render "shared/navbar" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+    <%= render 'shared/flashes' %>
+
+<div class="navbar fixed-top">
+  <div class="navbar-flex">
+    </div>
+  <div class="navbar-flex text-center">
+
+   <h1><a style="text-decoration:none; color:black;" href=“#”>LUXIFI</a></h1>
+
+   <p> Designers Clothing Shoes Bags </p>
+   </div>
+   <div class="navbar-flex">
+     <ul class="justify-content-end">
+    <li><a href="#"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-bookmark" style="color: #000205;"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i></a></li>
+    </ul>
+    </div>
+</div>
+
+
     <%= yield %>
   </body>
 </html>
