@@ -3,8 +3,8 @@
 
 class Item < ApplicationRecord
   has_many :bookings
-  has_one :user, through: :bookings
+  has_one :user
   CATEGORY = ["Wears", "Bags", "Accessories"]
-  validates :item, inclusion: { in: [CATEGORY] }
-  validates :brand, :price, :category, :name, :gender, presence: true
+  validates :category, inclusion: { in: [CATEGORY] }
+  validates :brand, :price, :category, :name, :gender, :user, presence: true
 end
