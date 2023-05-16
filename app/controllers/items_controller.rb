@@ -6,14 +6,14 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    authorize @item
+    authorize(@item)
   end
 
   def new
-    authorize @item
+    authorize(@item)
   end
 
   def create
-    authorize @item
+    authorize(@item)
   end
 end

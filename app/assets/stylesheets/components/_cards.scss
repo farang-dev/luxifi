@@ -1,18 +1,17 @@
-.card {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.item-card {
+  width: 280px;
+  // overflow: hidden;
+  background-color: white;
   margin-top: 3px;
-  padding-right: 14px;
+  border: 1px $gray solid;
 }
 
-.card > img {
-  position: absolute;
-  height: 100%;
+.item-card img {
+  // position: absolute;
+  // height: 300px;
   width: 100%;
-  background-size: cover;
-  box-sizing: border-box;
-  object-fit: cover;
+  // box-sizing: border-box;
+  border-bottom: 1px $gray solid;
 }
 
 .card-info h2 {
@@ -30,8 +29,8 @@
 }
 
 
-.card .card-info {
-  padding: 16px;
+.item-card .card-info {
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -41,10 +40,14 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
 }
 
+.card-box {
+  margin: auto;
+  width: 900px;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -62,20 +65,20 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
