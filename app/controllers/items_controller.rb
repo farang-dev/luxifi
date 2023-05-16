@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    authorize @items
+    @items = policy_scope(Item)
   end
 
   def show
+    @item = Item.find(params[:id])
     authorize @item
   end
 

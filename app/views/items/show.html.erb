@@ -1,0 +1,9 @@
+<div class="container">
+<!-- product_detail.html.erb -->
+
+<h1><%= @item.name %></h1>
+<p>Brand: <%= @item.brand %></p>
+<p>Price: $<%= @item.price %></p>
+<img src="<%= @item.image_url %>" alt="<%= @item.name %> Image">
+<%= link_to "Add an item", items_path, class: "btn btn-primary mb-4" %>
+</div>
