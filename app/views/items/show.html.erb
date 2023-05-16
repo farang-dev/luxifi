@@ -1,12 +1,14 @@
+
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-fluid">
+    <div class="col-md-4">
+      <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-thumbnail">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
       <h1><%= @item.name %></h1>
       <p class="mb-4">Brand: <%= @item.brand %></p>
       <h4>Price: $<%= @item.price %></h4>
+      <%= link_to "Add a item", item_bookings_path(@item), class: "btn btn-primary mb-4 mt-3" %>
     </div>
   </div>
 </div>
