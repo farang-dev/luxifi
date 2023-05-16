@@ -1,17 +1,17 @@
 <h2>Luxifi</h2>
 <div class="cotainter">
   <h2>NEW IN</h2>
-  <% @items.each do [item] %>
-  <div class="card">
-    <p> <%= item.image_url %> </p>
-    <div class="card-info">
-      <div>
-        <h2> <%= item.brand %> </h2>
-        <p> <%= item.name  %></p>
+  <% @items.each do |item| %>
+    <div class="card">
+      <p> <%= item.image_url %> </p>
+      <div class="card-info">
         <div>
-          <h2> <%= item.price %> </h2>
+          <h2> <%= item.brand %> </h2>
+          <p> <%= item.name  %></p>
+          <div>
+            <h2> <%= item.price %> </h2>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
