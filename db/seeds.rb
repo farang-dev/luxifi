@@ -19,6 +19,7 @@ puts "clearing"
 # for now 5 items for Women's(gender) Accessories(category)
 # for now 5 items for Men's(gender) Wears(category)
 # Seeding 10 items in total for development purpose
+User.destroy_all
 user = User.create(email: "email@me.com", password: "secret")
 puts "making a user"
 
