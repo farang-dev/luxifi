@@ -99,3 +99,26 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+
+.overlayText {
+  position: absolute;
+  top: 85%;
+  left: 47%;
+  z-index: 1;
+}
+
+#topText {
+  color: white;
+  font-size: 30px;
+  align-self: center;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+
+
+}
+
+#topText:hover {
+  color: rgb(215, 215, 215);
+  transition: color 0.3s;
+}
