@@ -5,16 +5,19 @@
   <div class="cards">
     <% @items.each do |item| %>
       <div class="item-card">
+        <div class="HeartAnimation heart-position " data-controller="heart" data-action="click->heart#animate"></div>
         <%= link_to item_path(item) do %>
           <%= image_tag(item.image_url) %>
         <% end %>
         <div class="card-info">
           <div>
+
             <h2> <%= item.brand %> </h2>
             <p> <%= item.name  %></p>
             <div>
               <h2> $<%= item.price %> </h2>
             </div>
+
           </div>
         </div>
       </div>
