@@ -11,4 +11,5 @@ class Item < ApplicationRecord
   validates :category, presence: true
   validates :name, presence: true
   validates :gender, presence: true
+  validates :comment, presence: true
 end

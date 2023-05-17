@@ -31,7 +31,8 @@ item_attributes = [
     brand: "Gucci",
     image_url: "https://cdn-images.farfetch-contents.com/16/98/71/16/16987116_34963264_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Women",
@@ -49,7 +50,8 @@ item_attributes = [
     brand: "Gucci",
     image_url: "https://cdn-images.farfetch-contents.com/15/36/88/75/15368875_26915329_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Women",
@@ -58,7 +60,8 @@ item_attributes = [
     brand: "Gucci",
     image_url: "https://cdn-images.farfetch-contents.com/15/59/82/98/15598298_28079923_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Women",
@@ -67,7 +70,8 @@ item_attributes = [
     brand: "Gucci",
     image_url: "https://cdn-images.farfetch-contents.com/18/53/71/69/18537169_40037740_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Men",
@@ -76,7 +80,8 @@ item_attributes = [
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/19/26/40/41/19264041_42406521_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Men",
@@ -85,7 +90,8 @@ item_attributes = [
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/70/56/29/16705629_32879151_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Men",
@@ -94,7 +100,8 @@ item_attributes = [
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/20/12/96/07/20129607_50181148_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Men",
@@ -103,7 +110,8 @@ item_attributes = [
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/94/55/02/16945502_33876479_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Men",
@@ -112,7 +120,8 @@ item_attributes = [
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/14/62/30/21/14623021_22596813_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   }
 ]
 
