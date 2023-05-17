@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_17_014204) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_17_014821) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_014204) do
     t.string "image_url"
     t.string "name"
     t.text "items"
+    t.text "comment"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
