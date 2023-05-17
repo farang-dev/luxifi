@@ -130,4 +130,4 @@ puts "creating..."
 item_attributes.each do |attribute|
   Item.create(attribute)
 end
-puts "created"
+puts "created #{Item.count} items"
