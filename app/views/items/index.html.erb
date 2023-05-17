@@ -15,6 +15,7 @@
                 <h2> $<%= item.price %> </h2>
               </div>
             </div>
+            <%= link_to "quick add", new_item_booking_path(item), class: "button" %>
           </div>
         </div>
       <% end %>
