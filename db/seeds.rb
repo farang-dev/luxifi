@@ -41,7 +41,8 @@ item_attributes = [
     brand: "Gucci",
     image_url: "https://cdn-images.farfetch-contents.com/16/11/17/80/16111780_30344763_1000.jpg",
     price: Faker::Commerce.price.to_i,
-    user: user
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item."
   },
   {
     gender: "Women",
@@ -130,4 +131,4 @@ puts "creating..."
 item_attributes.each do |attribute|
   Item.create(attribute)
 end
-puts "created"
+puts "created #{Item.count} items"
