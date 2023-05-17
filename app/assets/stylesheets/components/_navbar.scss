@@ -1,18 +1,16 @@
 .navbar-flex {
   flex:1;
 }
-.navbar{
-  padding-right: 22px;
-  margin: 0;
-}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
   transition: 0.3s ease-in-out;
+  padding-right: 22px;
+  margin-bottom: 16px;
 }
-
 
 .navbar ul {
   display: flex;
@@ -38,14 +36,14 @@ nav a {
   text-align: center;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.sticky + .content {
-  padding-top: 60px;
-}
+// .sticky {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+// }
+// .sticky + .content {
+//   padding-top: 60px;
+// }
 
 .navbar:hover {
   background-color: #fff;

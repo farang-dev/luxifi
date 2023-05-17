@@ -1,18 +1,24 @@
+<div>
+  <h2 class="header">Your Items</h2>
+</div>
 <div class="container">
-  <h2>Your Items</h2>
-  <% @bookings.each do |booking| %>
-    <div class="card">
-      <div class="d-flex">
-        <p>Item: <%= booking.item.name %></p>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <div class="item-card">
         <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
+        <div class="card-info">
+          <h2><%= booking.item.name %></h2>
+          <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %></p>
+          <div>
+            <%= booking.status %>
+            <p>From: <%= booking.start_date %> </p>
+            <p> Until: <%= booking.end_date %></p>
+            <p>To: <%= booking.user.email %></p>
+            <p>From: <%= booking.item.user.email %></p>
+            <p>Comment: <%= booking.comment %></p>
+          </div>
+        </div>
       </div>
-      <div class="d-flex">
-        <p>From: <%= booking.start_date %> </p>
-        <p> -- <%= booking.end_date %></p>
-      </div>
-      <p>Status: <%= booking.status %></p>
-      <p>Borrower: <%= booking.user.email %></p>
-      <p>Loaner: <%= booking.item.user.email %></p>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
