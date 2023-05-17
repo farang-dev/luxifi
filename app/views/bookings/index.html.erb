@@ -7,19 +7,15 @@
       <div class="item-card">
         <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
         <div class="card-info">
+          <h2><%= booking.item.name %></h2>
+          <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %></p>
           <div>
-            <div class="card-tags">
-              <span><%= booking.status %></span>
-            </div>
-            <h2><%= booking.item.name %></h2>
-            <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %></p>
-            <div>
-              <p>From: <%= booking.start_date %> </p>
-              <p> Until: <%= booking.end_date %></p>
-              <p>To: <%= booking.user.email %></p>
-              <p>From: <%= booking.item.user.email %></p>
-              <p>Comment: <%= booking.comment %></p>
-            </div>
+            <%= booking.status %>
+            <p>From: <%= booking.start_date %> </p>
+            <p> Until: <%= booking.end_date %></p>
+            <p>To: <%= booking.user.email %></p>
+            <p>From: <%= booking.item.user.email %></p>
+            <p>Comment: <%= booking.comment %></p>
           </div>
         </div>
       </div>
