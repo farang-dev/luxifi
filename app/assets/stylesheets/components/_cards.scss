@@ -41,6 +41,23 @@
   width: 900px;
 }
 
+.card-tags {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  bottom: 150px;
+  span {
+    background: rgb(255, 98, 0);
+    font-size: .8em;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-right: 1px;
+  }
+  a {
+    color: white;
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

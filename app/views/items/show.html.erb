@@ -1,15 +1,18 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-thumbnail">
-    </div>
-    <div class="col-sm-6 d-flex justify-content-center align-items-center">
-      <div class="col-md-10 mt-4">
-        <h3 ><%= @item.name %></h3>
-        <p class="mt-3">Brand: <%= @item.brand %></p>
-        <p>Price: $<%= @item.price %></p>
-        <%= link_to "Add an item", new_item_booking_path(@item), class: "btn btn-primary mt-1" %>
+<div class="pt-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-fluid img-thumbnail">
+      </div>
+      <div class="col-sm-8 d-flex justify-content-center align-items-center">
+        <div class="col-md-8 mt-6">
+          <h3 ><%= @item.name %></h3>
+          <p class="mt-3">Brand: <%= @item.brand %></p>
+          <p>Price: $<%= @item.price %> / day</p>
+          <p>Detail: <%= @item.comment %> </p>
+          <%= link_to "Add an item", new_item_booking_path(@item), class: "button mt-1" %>
+        </div>
       </div>
     </div>
   </div>
