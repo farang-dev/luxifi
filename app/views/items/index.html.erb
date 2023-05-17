@@ -9,14 +9,14 @@
           <%= image_tag(item.image_url) %>
         <% end %>
         <div class="card-info">
-          <%# <div> %>
-          <h2> <%= item.brand %> </h2>
-          <p> <%= item.name  %></p>
           <div class="d-flex justify-content-between">
-            <h2> $<%= item.price %> </h2>
-            <%= link_to "quick add", new_item_booking_path(item), class: "btn btn-light" %>
+            <div>
+              <h2> <%= item.brand %> </h2>
+              <p> <%= item.name  %></p>
+              <h2> $<%= item.price %> </h2>
+            </div>
+            <%= link_to "quick add", new_item_booking_path(item), class: "button" %>
           </div>
-          <%# </div> %>
         </div>
       </div>
     <% end %>
