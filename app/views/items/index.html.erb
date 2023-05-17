@@ -1,24 +1,22 @@
-<div class="pt-container">
-  <h2 class="header">NEW IN</h2>
-  <div class="container">
-    <div class="cards">
-      <% @items.each do |item| %>
-        <div class="item-card">
-          <%= link_to item_path(item) do %>
-            <%= image_tag(item.image_url) %>
-          <% end %>
-          <div class="card-info">
+<h2 class="header">NEW IN</h2>
+<div class="container">
+  <div class="cards">
+    <% @items.each do |item| %>
+      <div class="item-card">
+        <%= link_to item_path(item) do %>
+          <%= image_tag(item.image_url) %>
+        <% end %>
+        <div class="card-info d-flex justify-content-between">
+          <div>
+            <h2> <%= item.brand %> </h2>
+            <p> <%= item.name  %></p>
+            <h2> $<%= item.price %> </h2>
             <div>
-              <h2> <%= item.brand %> </h2>
-              <p> <%= item.name  %></p>
-              <div>
-                <h2> $<%= item.price %> </h2>
-              </div>
             </div>
             <%= link_to "quick add", new_item_booking_path(item), class: "button" %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
