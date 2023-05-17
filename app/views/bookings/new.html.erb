@@ -1,14 +1,16 @@
 <div class="container items">
-  <h1>Request <%= @item.name %></h1>
-  <%= simple_form_for [@item, @booking] do |f| %>
-    <h3>$<%= @item.price %> per day</h3>
-    <div class="d-flex ">
-      <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
-      <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
-    </div>
-    <div class="col-6">
-      <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
-    </div>
-    <%= f.submit value:"Request", class:"btn btn-primary" %>
-  <% end %>
+  <div class="empty-div-navbar-fix mt-5">
+    <h1>Request <%= @item.name %></h1>
+    <%= simple_form_for [@item, @booking] do |f| %>
+      <h3>$<%= @item.price %> per day</h3>
+      <div class="d-flex ">
+        <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
+        <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
+      </div>
+      <div class="col-6">
+        <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
+      </div>
+      <%= f.submit value:"Request", class:"btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
