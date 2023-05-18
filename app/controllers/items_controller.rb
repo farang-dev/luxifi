@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @items = policy_scope(Item)
+      if params[:query].present?
+        @items = @items.search(params[:query])
+      end
   end
+
 
   def show
     @item = Item.find(params[:id])
