@@ -18,8 +18,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     authorize(@item)
-    if
-      @item.save
+    if @item.save
       redirect_to bookings_path(current_user)
     else
       render :new, status, :unprocessable_entity
