@@ -40,8 +40,6 @@
 .cards-half {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px $gray solid;
-  border-radius: 4%;
   padding: 10px;
   gap: 8px;
 }

@@ -19,7 +19,7 @@
             <% else %>
               <%= image_tag(booking.item.image_url) %>
             <% end %>
-            <div>
+            <div class="card-info">
               <h2><%= booking.item.name %></h2>
               <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
               <div>
@@ -35,7 +35,7 @@
                   <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
                 <% end %>
               </div>
-              <div class="d-flex ml-2 mb-2" >
+              <div class="d-flex mb-2" >
                 <% if policy(booking).destroy? %>
                   <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
                 <% end %>
