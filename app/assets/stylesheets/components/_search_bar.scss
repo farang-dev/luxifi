@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-input[type="text"] {
+#search_bar input[type="text"] {
   height: 40px;
   font-size: 16px;
   font-family: "Lato", sans-serif;
@@ -21,11 +21,11 @@ input[type="text"] {
   transition: box-shadow 0.1s ease;
 }
 
-input[type="text"]:focus {
+#search_bar input[type="text"]:focus {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-input[type="submit"] {
+#search_bar input[type="submit"] {
   height: 40px;
   width: 80px;
   display: inline-block;
@@ -39,7 +39,7 @@ input[type="submit"] {
 }
 
 
-input[type="submit"]:hover {
+#search_bar input[type="submit"]:hover {
   opacity: 1;
   color: white;
   background-color: black;

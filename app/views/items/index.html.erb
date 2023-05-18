@@ -1,22 +1,22 @@
 <% if params[:category].present? %>
 <h2 class="header"> <%= params[:category].upcase %> </h2>
 <% elsif params[:query].present? %>
-<h2 class="header">Here are results for:<br>"<%= params[:query] %>"</h2>
+<h3 class="header">Here are results for:<br><%= params[:query] %></h3>
 <% else %>
 <h2 class="header">NEW IN</h2>
 <% end %>
 
 <div class="search">
- <div id="search_bar">
+  <div id="search_bar">
     <%= form_with url: items_path, method: :get, class: "d-flex"  do %>
-        <%= text_field_tag :query,
+      <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Search for an item"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary"   %>
+            %>
+      <%= submit_tag "Search", name: "", class: "button" %>
     <% end %>
-    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -30,7 +30,11 @@
       <div class="item-card">
         <div class="HeartAnimation heart-position " data-controller="heart" data-action="click->heart#animate"></div>
         <%= link_to item_path(item) do %>
-          <%= image_tag(item.image_url) %>
+          <% if item.photo.attached? %>
+            <%= cl_image_tag(item.photo.key) %>
+          <% else %>
+            <%= image_tag(item.image_url) %>
+          <% end %>
         <% end %>
         <div class="card-info d-flex justify-content-between">
           <div>
@@ -38,8 +42,8 @@
             <p> <%= item.name  %></p>
             <h2> $<%= item.price %> / day</h2>
           </div>
-          <div class="nowrap" style="white-space: nowrap;">
-            <%= link_to "quick add", new_item_booking_path(item), class: "button" %>
+          <div>
+            <%= link_to "Reserve", new_item_booking_path(item), class: "button" %>
           </div>
         </div>
       </div>
