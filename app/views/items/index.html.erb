@@ -1,4 +1,8 @@
+<% if params[:category].present? %>
+<h2 class="header"> <%= params[:category].upcase %> </h2>
+<% else %>
 <h2 class="header">NEW IN</h2>
+<% end %>
 
 
 <div class="search">
