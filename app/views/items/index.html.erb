@@ -1,11 +1,11 @@
 <% if params[:category].present? %>
-<h2 class="header"> <%= params[:category].upcase %> </h2>
+  <h2 class="header"> <%= params[:category].upcase %> </h2>
 <% elsif params[:query].present? %>
-<h3 class="header">Here are results for:<br><%= params[:query] %></h3>
+  <h3 class="header">Here are results for:<br>
+    <%= params[:query] %></h3>
 <% else %>
-<h2 class="header">NEW IN</h2>
+  <h2 class="header">NEW IN</h2>
 <% end %>
-
 <div class="search">
   <div id="search_bar">
     <%= form_with url: items_path, method: :get, class: "d-flex"  do %>
@@ -18,7 +18,6 @@
     <% end %>
   </div>
 </div>
-
 <div class="container">
   <div class="m-2">
     <%= link_to root_path, class: "back-button" do %>
