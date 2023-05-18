@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
+    @user = current_user
   end
 
   def show
@@ -40,6 +41,13 @@ class BookingsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
