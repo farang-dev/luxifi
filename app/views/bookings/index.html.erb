@@ -1,32 +1,49 @@
 <div class="container">
-  <h2 class="header">Your Items</h2>
+  <h2 class="header">Your Closet</h2>
   <div class="m-2">
     <%= link_to items_path, class: "back-button" do %>
       <i class="fa-solid fa-arrow-left"></i> NEW IN
     <% end %>
   </div>
-</div>
-<div class="container">
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-      <div class="item-card">
-        <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
-        <div class="card-info">
-          <h2><%= booking.item.name %></h2>
-          <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
-          <div>
-            <%= booking.status %>
-            <p>From: <%= booking.start_date %> </p>
-            <p> Until: <%= booking.end_date %></p>
-            <p>To: <%= booking.user.email %></p>
-            <p>From: <%= booking.item.user.email %></p>
-            <p>Comment: <%= booking.comment %></p>
+  <div class="d-flex">
+    <div class="col">
+      <h3 class="text-center">Loans</h3>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+          <div class="item-card">
+            <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
+            <div class="card-info">
+              <h2><%= booking.item.name %></h2>
+              <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
+              <div>
+                <%= booking.status %>
+                <p>From: <%= booking.start_date %> </p>
+                <p> Until: <%= booking.end_date %></p>
+                <p>To: <%= booking.user.email %></p>
+                <p>From: <%= booking.item.user.email %></p>
+                <p>Comment: <%= booking.comment %></p>
+              </div>
+            </div>
+            <% if policy(booking).edit? %>
+              <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
+            <% end %>
           </div>
-        </div>
-        <% if policy(booking).edit? %>
-          <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
         <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="col">
+      <h3 class="text-center">Items</h3>
+      <div class="cards">
+        <% @current_user.items.each do |item| %>
+          <div class="item-card">
+            <img src="<%= item.image_url %>" alt="<%= item.name %>">
+            <div class="card-info">
+              <h2> <%= item.brand %> </h2>
+              <p> <%= item.name  %></p>
+              <h2> $<%= item.price %> / day</h2>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
