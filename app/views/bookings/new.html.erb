@@ -1,21 +1,50 @@
 <div class="container items">
-  <div class="m-2">
+  <div>
     <%= link_to bookings_path, class: "back-button" do %>
       <i class="fa-solid fa-arrow-left"></i> BACK
     <% end %>
   </div>
-  <div class="empty-div-navbar-fix mt-5">
-    <h1>Request <%= @item.name %></h1>
-    <%= simple_form_for [@item, @booking] do |f| %>
-      <h3>$<%= @item.price %> / day</h3>
-      <div class="d-flex ">
-        <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
-        <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
+  <div class="d-flex justify-content-around mx-auto">
+    <div class="empty-div-navbar-fix mt-5">
+      <h1>Request <%= @item.name %></h1>
+      <%= simple_form_for [@item, @booking] do |f| %>
+        <h3>$<%= @item.price %> / day</h3>
+        <div class="d-flex ">
+          <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
+          <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
+        </div>
+        <div class="col-6">
+          <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
+        </div>
+        <form>
+          <div class="form-row">
+            <div class="col-7">
+              <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="State">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Zip">
+            </div>
+          </div>
+        </form>
+        <%= f.submit value:"Reserve", class:"button" %>
+      <% end %>
+    </div>
+    <div class="card" style="width: 300px">
+      <div class="div">
+        <% if @item.photo.attached? %>
+          <%= cl_image_tag @item.photo.key, class: "img-fluid img-thumbnail"%>
+        <% else %>
+          <%= image_tag @item.image_url, class: "img-fluid img-thumbnail"%>
+        <% end %>
       </div>
-      <div class="col-6">
-        <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
+      <div class="card-info">
+        <h2><%= @item.name %></h2>
+        <p class="mt-3">Brand: <%= @item.brand %></p>
+        <p>Price: $<%= @item.price %> / day</p>
       </div>
-      <%= f.submit value:"Reserve", class:"button" %>
-    <% end %>
+    </div>
   </div>
 </div>
