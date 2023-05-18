@@ -13,6 +13,7 @@
 require 'faker'
 
 # Clear existing data
+Booking.destroy_all
 Item.destroy_all
 puts "clearing"
 # Attributes are here
