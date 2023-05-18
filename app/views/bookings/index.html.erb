@@ -8,13 +8,17 @@
     </div>
     <%= link_to "Add item", new_item_path, class: "button"%>
   </div>
-  <div class="d-flex mb-5">
+  <div class=" d-flex mb-5">
     <div class="col">
       <h3 class="text-center">Loans</h3>
-      <div class="cards-half adjust-content-center">
+      <div class="cards-half">
         <% @bookings.each do |booking| %>
           <div class="item-card">
-            <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
+            <% if booking.item.photo.attached? %>
+              <%= cl_image_tag(booking.item.photo.key) %>
+            <% else %>
+              <%= image_tag(booking.item.image_url) %>
+            <% end %>
             <div class="card-info">
               <h2><%= booking.item.name %></h2>
               <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
@@ -25,13 +29,13 @@
                 <p>Comment: <%= booking.comment %></p>
               </div>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex mb-2">
               <div>
                 <% if policy(booking).edit? %>
                   <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
                 <% end %>
               </div>
-              <div class="d-flex" mb-2>
+              <div class="d-flex mb-2" >
                 <% if policy(booking).destroy? %>
                   <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
                 <% end %>
@@ -46,13 +50,17 @@
       <div class="cards-half">
         <% @current_user.items.each do |item| %>
           <div class="item-card">
-            <img src="<%= item.image_url %>" alt="<%= item.name %>">
+            <% if item.photo.attached? %>
+              <%= cl_image_tag(item.photo.key) %>
+            <% else %>
+              <%= image_tag(item.image_url) %>
+            <% end %>
             <div class="card-info">
               <h2> <%= item.brand %> </h2>
               <p> <%= item.name  %></p>
               <h2> $<%= item.price %> / day</h2>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex mb-2">
               <% if policy(item).edit? %>
                 <%= link_to "edit item", edit_item_path(item), class: "button" %>
               <% end %>
