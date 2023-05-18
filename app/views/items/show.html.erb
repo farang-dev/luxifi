@@ -1,6 +1,11 @@
-<div class="container">
+<div class="container mb-4">
   <div class="row">
     <div class="col-sm-4">
+      <div class="m-2">
+        <%= link_to items_path, class: "back-button" do %>
+          <i class="fa-solid fa-arrow-left"></i> BACK
+        <% end %>
+      </div>
       <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-fluid img-thumbnail">
     </div>
     <div class="col-sm-8 d-flex justify-content-center align-items-center">
