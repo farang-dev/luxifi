@@ -6,7 +6,13 @@
           <i class="fa-solid fa-arrow-left"></i> BACK
         <% end %>
       </div>
-      <img src="<%= @item.image_url %>" alt="<%= @item.name %> Image" class="img-fluid img-thumbnail">
+      <%# <div class="img-fluid img-thumbnail"> %>
+      <% if @item.photo.attached? %>
+        <%= cl_image_tag @item.photo.key, class: "img-fluid img-thumbnail"%>
+      <% else %>
+        <%= image_tag @item.image_url, class: "img-fluid img-thumbnail"%>
+      <% end %>
+      <%# </div> %>
     </div>
     <div class="col-sm-8 d-flex justify-content-center align-items-center">
       <div class="col-md-8 mt-6">
