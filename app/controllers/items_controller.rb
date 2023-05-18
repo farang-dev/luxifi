@@ -14,11 +14,23 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
     authorize(@item)
   end
 
   def create
+    @item = Item.new(item_params)
+    @item.user = current_user
     authorize(@item)
+    if @item.save
+      redirect_to bookings_path
+    else
+      render :new, status, :unprocessable_entity
+    end
+  end
+
+  def item_params
+    params.require(:item).permit(:category, :brand, :price, :name, :gender, :comment, :tag, :photo)
   end
 
   def edit
