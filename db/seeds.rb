@@ -27,6 +27,61 @@ puts "making a user"
 item_attributes = [
   {
     gender: "Women",
+    category: "Clothes",
+    name: " Halterneck Dress",
+    brand: "Ferragamo",
+    image_url: "https://cdn-images.farfetch-contents.com/19/70/75/50/19707550_44163407_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "Ferragamo dress for summer"
+  },
+  {
+    gender: "Women",
+    category: "Clothes",
+    name: "Sleeveless Midi Dress",
+    brand: "Ferragamo",
+    image_url: "https://cdn-images.farfetch-contents.com/19/76/87/21/19768721_44249699_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "Ferragamo dress for summer"
+  },
+  {
+    gender: "Women",
+    category: "Clothes",
+    name: "Asymmetric Dress",
+    brand: "Ferragamo",
+    image_url: "https://cdn-images.farfetch-contents.com/19/66/77/35/19667735_44107284_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "Ferragamo dress for summer"
+  },
+  {
+    gender: "Women",
+    category: "Clothes",
+    name: "Shirred cotton Dress",
+    brand: "Ferragamo",
+    image_url: "https://cdn-images.farfetch-contents.com/20/24/05/48/20240548_50189098_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "Ferragamo dress for summer"
+  },
+  {
+    gender: "Women",
+    category: "Clothes",
+    name: "Tie-dye Draped Slip Dress",
+    brand: "Ferragamo",
+    image_url: "https://cdn-images.farfetch-contents.com/19/13/68/32/19136832_44774724_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "Ferragamo dress for summer"
+  },
+  {
+    gender: "Women",
     category: "Accessories",
     name: "Geneva Seal Watch",
     brand: "Gucci",
@@ -81,8 +136,118 @@ item_attributes = [
     tag: "silver necklace"
   },
   {
+    gender: "Women",
+    category: "Bags",
+    name: "Jitney 1.4 Top-handle Bag",
+    brand: "Off-White",
+    image_url: "https://cdn-images.farfetch-contents.com/19/78/10/99/19781099_44495383_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "off-white bag for summer"
+  },
+  {
+    gender: "Women",
+    category: "Bags",
+    name: "Small City Tote Bag",
+    brand: "Off-White",
+    image_url: "https://cdn-images.farfetch-contents.com/20/01/77/30/20017730_45068077_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "off-white bag for summer"
+  },
+  {
+    gender: "Women",
+    category: "Bags",
+    name: "Small Binder Shoulder Bag",
+    brand: "Off-White",
+    image_url: "https://cdn-images.farfetch-contents.com/19/32/17/45/19321745_44462200_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "off-white bag for summer"
+  },
+  {
+    gender: "Women",
+    category: "Bags",
+    name: "Burrow-22 Shoulder Bag",
+    brand: "Off-White",
+    image_url: "https://cdn-images.farfetch-contents.com/16/86/86/51/16868651_f58a9666-fe11-48fe-a790-6e9224ae447b_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "off-white bag for summer"
+  },
+  {
+    gender: "Women",
+    category: "Bags",
+    name: "Jitney 1.4 Top-handle Bag",
+    brand: "Off-White",
+    image_url: "https://cdn-images.farfetch-contents.com/19/77/93/54/19779354_45171510_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "off-white bag for summer"
+  },
+  {
+    gender: "Women",
+    category: "Shoes",
+    name: "Rockstud Point-toe Pumps",
+    brand: "Valentino",
+    image_url: "https://cdn-images.farfetch-contents.com/19/49/33/37/19493337_50143936_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "valentino pumps for summer"
+  },
+  {
+    gender: "Women",
+    category: "Shoes",
+    name: "Rockstud 100mm Leather Sandals",
+    brand: "Valentino",
+    image_url: "https://cdn-images.farfetch-contents.com/19/21/62/26/19216226_50154242_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "valentino sandals for summer"
+  },
+  {
+    gender: "Women",
+    category: "Shoes",
+    name: "Rockstud 60mm Leather Mules",
+    brand: "Valentino",
+    image_url: "https://cdn-images.farfetch-contents.com/19/95/34/66/19953466_45288305_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "valentino mules for summer"
+  },
+  {
+    gender: "Women",
+    category: "Shoes",
+    name: "50mm Leather Slingback Pumps",
+    brand: "Valentino",
+    image_url: "https://cdn-images.farfetch-contents.com/20/24/05/72/20240572_50186766_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "valentino pumps for summer"
+  },
+  {
+    gender: "Women",
+    category: "Shoes",
+    name: " 55mm Leather Sandals",
+    brand: "Valentino",
+    image_url: "https://cdn-images.farfetch-contents.com/19/36/10/29/19361029_50104074_1000.jpg",
+    price: Faker::Commerce.price.to_i,
+    user: user,
+    comment: "Good condition. Comfortable to wear. Style up your look with this item.",
+    tag: "valentino sandals for summer"
+  },
+  {
     gender: "Men",
-    category: "Wears",
+    category: "Clothes",
     name: "Vintage Cult",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/19/26/40/41/19264041_42406521_1000.jpg",
@@ -93,7 +258,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Wears",
+    category: "Clothes",
     name: "Gianfranco Ferré Pre-Owned",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/70/56/29/16705629_32879151_1000.jpg",
@@ -104,7 +269,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Wears",
+    category: "Clothes",
     name: "Single-breasted Linen Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/20/12/96/07/20129607_50181148_1000.jpg",
@@ -115,7 +280,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Wears",
+    category: "Clothes",
     name: "Single-breasted Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/94/55/02/16945502_33876479_1000.jpg",
@@ -126,7 +291,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Wears",
+    category: "Clothes",
     name: "Two-piece Tailored Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/14/62/30/21/14623021_22596813_1000.jpg",
