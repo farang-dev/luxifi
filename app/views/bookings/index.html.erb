@@ -49,7 +49,7 @@
               <%= link_to "edit item", edit_item_path(item), class: "button" %>
             <% end %>
             <% if policy(item).destroy? %>
-              <%= link_to "remove item", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "btn btn-warning" %>
+              <%= link_to "remove item", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "btn btn-warning" %>
             <% end %>
           </div>
         <% end %>
