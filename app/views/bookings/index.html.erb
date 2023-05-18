@@ -31,9 +31,9 @@
                   <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
                 <% end %>
               </div>
-              <div>
+              <div class="d-flex" mb-2>
                 <% if policy(booking).destroy? %>
-                  <%= link_to "remove request", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this request?" }, class: "button" %>
+                  <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
                 <% end %>
               </div>
             </div>
@@ -52,7 +52,7 @@
               <p> <%= item.name  %></p>
               <h2> $<%= item.price %> / day</h2>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-center">
               <% if policy(item).edit? %>
                 <%= link_to "edit item", edit_item_path(item), class: "button" %>
               <% end %>
@@ -61,8 +61,8 @@
               <% end %>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
