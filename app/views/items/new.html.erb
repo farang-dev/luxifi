@@ -14,7 +14,7 @@
           <%= f.input :price, as:"text", placeholder: "Price..." %>
           <%= f.input :comment, placeholder: "Details..." %>
           <%= f.input :tag, placeholder: "Color, size, etc.." %>
-          <%= f.input :photo, as: :file %>
+          <%# <%= f.input :photo, as: :file %>
           <div class="d-flex justify-content-between">
             <%= f.input :category, collection: Item::CATEGORY, prompt: 'Choose a category' %>
             <%= f.input :gender, collection: ['Womens', 'Mens', 'Neutral'], prompt: 'Choose a gender' %>
