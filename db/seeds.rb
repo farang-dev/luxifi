@@ -27,7 +27,7 @@ puts "making a user"
 item_attributes = [
   {
     gender: "Women",
-    category: "Clothes",
+    category: "Clothing",
     name: " Halterneck Dress",
     brand: "Ferragamo",
     image_url: "https://cdn-images.farfetch-contents.com/19/70/75/50/19707550_44163407_1000.jpg",
@@ -38,7 +38,7 @@ item_attributes = [
   },
   {
     gender: "Women",
-    category: "Clothes",
+    category: "Clothing",
     name: "Sleeveless Midi Dress",
     brand: "Ferragamo",
     image_url: "https://cdn-images.farfetch-contents.com/19/76/87/21/19768721_44249699_1000.jpg",
@@ -49,7 +49,7 @@ item_attributes = [
   },
   {
     gender: "Women",
-    category: "Clothes",
+    category: "Clothing",
     name: "Asymmetric Dress",
     brand: "Ferragamo",
     image_url: "https://cdn-images.farfetch-contents.com/19/66/77/35/19667735_44107284_1000.jpg",
@@ -60,7 +60,7 @@ item_attributes = [
   },
   {
     gender: "Women",
-    category: "Clothes",
+    category: "Clothing",
     name: "Shirred cotton Dress",
     brand: "Ferragamo",
     image_url: "https://cdn-images.farfetch-contents.com/20/24/05/48/20240548_50189098_1000.jpg",
@@ -71,7 +71,7 @@ item_attributes = [
   },
   {
     gender: "Women",
-    category: "Clothes",
+    category: "Clothing",
     name: "Tie-dye Draped Slip Dress",
     brand: "Ferragamo",
     image_url: "https://cdn-images.farfetch-contents.com/19/13/68/32/19136832_44774724_1000.jpg",
@@ -247,7 +247,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Clothes",
+    category: "Clothing",
     name: "Vintage Cult",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/19/26/40/41/19264041_42406521_1000.jpg",
@@ -258,7 +258,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Clothes",
+    category: "Clothing",
     name: "Gianfranco Ferré Pre-Owned",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/70/56/29/16705629_32879151_1000.jpg",
@@ -269,7 +269,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Clothes",
+    category: "Clothing",
     name: "Single-breasted Linen Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/20/12/96/07/20129607_50181148_1000.jpg",
@@ -280,7 +280,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Clothes",
+    category: "Clothing",
     name: "Single-breasted Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/16/94/55/02/16945502_33876479_1000.jpg",
@@ -291,7 +291,7 @@ item_attributes = [
   },
   {
     gender: "Men",
-    category: "Clothes",
+    category: "Clothing",
     name: "Two-piece Tailored Suit",
     brand: "Prada",
     image_url: "https://cdn-images.farfetch-contents.com/14/62/30/21/14623021_22596813_1000.jpg",
