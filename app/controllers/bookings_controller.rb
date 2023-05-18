@@ -28,16 +28,27 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    authorize(@booking)
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
-    authorize(@booking)
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(edit_booking_params)
+      redirect_to bookings_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :comment)
+  end
+
+  def edit_booking_params
+    params.require(:booking).permit(:start_date, :end_date, :comment, :status)
   end
 end

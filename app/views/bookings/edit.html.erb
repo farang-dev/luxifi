@@ -1,0 +1,13 @@
+<div class="container items">
+  <div class="header">
+    <h1>Update request</h1>
+  </div>
+  <h3><%= @booking.item.name %></h3>
+  <h3><%= @booking.start_date %> to <%= @booking.end_date %></h3>
+  <h3>$<%= @booking.item.price * (@booking.end_date - @booking.start_date).to_i %> total</h3>
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :status, collection: Booking::STATUS, prompt: 'Choose a status' %>
+    <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
+    <%= f.submit value:"Update" ,class:"button" %>
+  <% end %>
+</div>

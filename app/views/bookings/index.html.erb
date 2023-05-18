@@ -8,7 +8,7 @@
         <img src="<%= booking.item.image_url %>" alt="<%= booking.item.name %>">
         <div class="card-info">
           <h2><%= booking.item.name %></h2>
-          <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %></p>
+          <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
           <div>
             <%= booking.status %>
             <p>From: <%= booking.start_date %> </p>
@@ -18,6 +18,9 @@
             <p>Comment: <%= booking.comment %></p>
           </div>
         </div>
+        <% if policy(booking).edit? %>
+          <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
+        <% end %>
       </div>
     <% end %>
   </div>
