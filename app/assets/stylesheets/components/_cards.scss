@@ -1,5 +1,5 @@
 .item-card {
-  width: 280px;
+
   // overflow: hidden;
   background-color: white;
   margin-top: 3px;
@@ -43,6 +43,13 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 8px;
 }
+
+.cards-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+
 .card-box {
   margin: auto;
   width: 900px;
