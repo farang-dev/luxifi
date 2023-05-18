@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:item_id])
+    @item = Item.find(params[:id])
     authorize @item
   end
 
