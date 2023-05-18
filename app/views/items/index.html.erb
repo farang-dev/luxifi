@@ -1,9 +1,10 @@
 <% if params[:category].present? %>
 <h2 class="header"> <%= params[:category].upcase %> </h2>
+<% elsif params[:query].present? %>
+<h2 class="header">Here are results for:<br>"<%= params[:query] %>"</h2>
 <% else %>
 <h2 class="header">NEW IN</h2>
 <% end %>
-
 
 <div class="search">
  <div id="search_bar">
@@ -17,15 +18,6 @@
     <% end %>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 <div class="container">
   <div class="m-2">
@@ -46,7 +38,7 @@
             <p> <%= item.name  %></p>
             <h2> $<%= item.price %> / day</h2>
           </div>
-          <div>
+          <div class="nowrap" style="white-space: nowrap;">
             <%= link_to "quick add", new_item_booking_path(item), class: "button" %>
           </div>
         </div>
