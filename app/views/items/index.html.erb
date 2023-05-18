@@ -10,7 +10,11 @@
       <div class="item-card">
         <div class="HeartAnimation heart-position " data-controller="heart" data-action="click->heart#animate"></div>
         <%= link_to item_path(item) do %>
-          <%# <%= image_tag(item.image_url) %>
+          <% if item.photo.attached? %>
+            <%= cl_image_tag(item.photo.key) %>
+          <% else %>
+            <%= image_tag(item.image_url) %>
+          <% end %>
         <% end %>
         <div class="card-info d-flex justify-content-between">
           <div>
