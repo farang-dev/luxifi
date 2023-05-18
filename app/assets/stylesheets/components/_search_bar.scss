@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400');
+
+/* Search Bar Styling */
+#search_bar {
+  margin: 50px 182px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  height: 40px;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 10px;
+  width: 400px;
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.1s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  height: 40px;
+  width: 80px;
+  display: inline-block;
+  color: #FFF;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  background-color: white;
+  color: black;
+  border: 1px solid;
+}
+
+
+input[type="submit"]:hover {
+  opacity: 1;
+  color: white;
+  background-color: black;
+  transition: background-color 0.5s;
+  border-radius: 4px;
+}

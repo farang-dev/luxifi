@@ -12,4 +12,10 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :gender, presence: true
   validates :comment, presence: true
+  include PgSearch::Model
+pg_search_scope :search,
+  against: [ :name, :brand, :category, :tag ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
