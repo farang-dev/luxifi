@@ -19,17 +19,21 @@
                 <%= booking.status %>
                 <p>From: <%= booking.start_date %> </p>
                 <p> Until: <%= booking.end_date %></p>
-                <p>To: <%= booking.user.email %></p>
-                <p>From: <%= booking.item.user.email %></p>
                 <p>Comment: <%= booking.comment %></p>
               </div>
             </div>
-            <% if policy(booking).edit? %>
-              <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
-            <% end %>
-            <% if policy(booking).destroy? %>
-              <%= link_to "remove request", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this request?" }, class: "btn btn-warning" %>
-            <% end %>
+            <div class="d-flex justify-content-between">
+              <div>
+                <% if policy(booking).edit? %>
+                  <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
+                <% end %>
+              </div>
+              <div>
+                <% if policy(booking).destroy? %>
+                  <%= link_to "remove request", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this request?" }, class: "button" %>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
@@ -45,12 +49,14 @@
               <p> <%= item.name  %></p>
               <h2> $<%= item.price %> / day</h2>
             </div>
-            <% if policy(item).edit? %>
-              <%= link_to "edit item", edit_item_path(item), class: "button" %>
-            <% end %>
-            <% if policy(item).destroy? %>
-              <%= link_to "remove item", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "btn btn-warning" %>
-            <% end %>
+            <div class="d-flex justify-content-between">
+              <% if policy(item).edit? %>
+                <%= link_to "edit item", edit_item_path(item), class: "button" %>
+              <% end %>
+              <% if policy(item).destroy? %>
+                <%= link_to "remove item", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "button" %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
