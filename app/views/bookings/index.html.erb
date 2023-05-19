@@ -32,7 +32,7 @@
             <div class="d-flex mb-2">
               <div>
                 <% if policy(booking).edit? %>
-                  <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
+                  <%= link_to "edit request", edit_booking_path(booking), class: "button-space button me-1" %>
                 <% end %>
               </div>
               <div class="d-flex mb-2" >
@@ -62,15 +62,15 @@
             </div>
             <div class="d-flex mb-2">
               <% if policy(item).edit? %>
-                <%= link_to "edit item", edit_item_path(item), class: "button" %>
+                <%= link_to "edit item", edit_item_path(item), class: "button-space button me-1" %>
               <% end %>
               <% if policy(item).destroy? %>
                 <%= link_to "remove item", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "button" %>
               <% end %>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
