@@ -1,76 +1,79 @@
 <div class="container">
-  <h2 class="header">Your Closet</h2>
-  <div class="d-flex justify-content-between card-bookings-buttons">
-    <div class="m-2">
+  <div class="row justify-content-evenly  card-bookings-buttons">
+    <div class="col-2 text-center">
       <%= link_to items_path, class: "back-button" do %>
         <i class="fa-solid fa-arrow-left"></i> NEW IN
       <% end %>
     </div>
-    <%= link_to "Add item", new_item_path, class: "button"%>
-  </div>
-  <div class=" d-flex mb-5">
-    <div class="col">
-      <h3 class="text-center header">Loans</h3>
-      <div class="cards-half">
-        <% @bookings.each do |booking| %>
-          <div class="item-card">
-            <% if booking.item.photo.attached? %>
-              <%= cl_image_tag(booking.item.photo.key) %>
-            <% else %>
-              <%= image_tag(booking.item.image_url) %>
-            <% end %>
-            <div class="card-info">
-              <h2><%= booking.item.name %></h2>
-              <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
-              <div>
-                <%= booking.status %>
-                <p>From: <%= booking.start_date %> </p>
-                <p> Until: <%= booking.end_date %></p>
-                <p>Comment: <%= booking.comment %></p>
-              </div>
-            </div>
-            <div class="d-flex mb-2">
-              <div>
-                <% if policy(booking).edit? %>
-                  <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
-                <% end %>
-              </div>
-              <div class="d-flex mb-2" >
-                <% if policy(booking).destroy? %>
-                  <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <h2 class="header-bookings col-2">Your Closet</h2>
+    <div class="col-2 text-center">
+      <%= link_to new_item_path, class: "back-button" do %>
+        ADD ITEM <i class="fa-solid fa-plus"></i>
+      <% end %>
     </div>
-    <div class="col">
-      <h3 class="text-center header">Items</h3>
-      <div class="cards-half">
-        <% @current_user.items.each do |item| %>
-          <div class="item-card">
-            <% if item.photo.attached? %>
-              <%= cl_image_tag(item.photo.key) %>
-            <% else %>
-              <%= image_tag(item.image_url) %>
-            <% end %>
-            <div class="card-info">
-              <h2> <%= item.brand %> </h2>
-              <p> <%= item.name  %></p>
-              <h2> $<%= item.price %> / day</h2>
+    <div class=" d-flex mb-5">
+      <div class="col">
+        <h3 class="text-center header">Loans</h3>
+        <div class="cards-half">
+          <% @bookings.each do |booking| %>
+            <div class="item-card">
+              <% if booking.item.photo.attached? %>
+                <%= cl_image_tag(booking.item.photo.key) %>
+              <% else %>
+                <%= image_tag(booking.item.image_url) %>
+              <% end %>
+              <div class="card-info">
+                <h2><%= booking.item.name %></h2>
+                <p>$<%= booking.item.price * (booking.end_date - booking.start_date).to_i %> total</p>
+                <div>
+                  <%= booking.status %>
+                  <p>From: <%= booking.start_date %> </p>
+                  <p> Until: <%= booking.end_date %></p>
+                  <p>Comment: <%= booking.comment %></p>
+                </div>
+              </div>
+              <div class="d-flex mb-2">
+                <div>
+                  <% if policy(booking).edit? %>
+                    <%= link_to "edit request", edit_booking_path(booking), class: "button" %>
+                  <% end %>
+                </div>
+                <div class="d-flex mb-2" >
+                  <% if policy(booking).destroy? %>
+                    <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <div class="d-flex mb-2">
-              <% if policy(item).edit? %>
-                <%= link_to "edit item", edit_item_path(item), class: "button" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col">
+        <h3 class="text-center header">Items</h3>
+        <div class="cards-half">
+          <% @current_user.items.each do |item| %>
+            <div class="item-card">
+              <% if item.photo.attached? %>
+                <%= cl_image_tag(item.photo.key) %>
+              <% else %>
+                <%= image_tag(item.image_url) %>
               <% end %>
-              <% if policy(item).destroy? %>
-                <%= link_to "remove item", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "button" %>
-              <% end %>
+              <div class="card-info">
+                <h2> <%= item.brand %> </h2>
+                <p> <%= item.name  %></p>
+                <h2> $<%= item.price %> / day</h2>
+              </div>
+              <div class="d-flex mb-2">
+                <% if policy(item).edit? %>
+                  <%= link_to "edit item", edit_item_path(item), class: "button" %>
+                <% end %>
+                <% if policy(item).destroy? %>
+                  <%= link_to "remove item", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this item?" }, class: "button" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
