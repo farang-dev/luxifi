@@ -1,7 +1,7 @@
 <% if params[:category].present? %>
   <h2 class="header"> <%= params[:category].upcase %> </h2>
 <% elsif params[:query].present? %>
-  <h3 class="header">Here are results for:<br>
+  <h3 class="header">Results for:<br>
     <%= params[:query] %></h3>
 <% else %>
   <h2 class="header">NEW IN</h2>
@@ -12,7 +12,7 @@
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Search for an item"
+            placeholder: "Search your brand"
             %>
       <%= submit_tag "Search", name: "", class: "button" %>
     <% end %>

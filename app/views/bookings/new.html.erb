@@ -1,6 +1,6 @@
 <div class="container items">
   <div>
-    <%= link_to bookings_path, class: "back-button" do %>
+    <%= link_to items_path, class: "back-button" do %>
       <i class="fa-solid fa-arrow-left"></i> BACK
     <% end %>
   </div>
@@ -12,9 +12,6 @@
         <div class="d-flex ">
           <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
           <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
-        </div>
-        <div class="col-6">
-          <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
         </div>
         <form>
           <div class="form-row">
@@ -29,9 +26,13 @@
             </div>
           </div>
         </form>
+        <div class="col-6">
+          <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
+        </div>
         <%= f.submit value:"Reserve", class:"button" %>
       <% end %>
     </div>
+    <%# <div class="row"> %>
     <div class="card" style="width: 300px">
       <div class="div">
         <% if @item.photo.attached? %>
@@ -47,4 +48,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
