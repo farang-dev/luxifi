@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def show
     @item = Item.find(params[:id])
     authorize(@item)
@@ -30,10 +29,6 @@ class ItemsController < ApplicationController
     else
       render :new, status, :unprocessable_entity
     end
-  end
-
-  def item_params
-    params.require(:item).permit(:category, :brand, :price, :name, :gender, :comment, :tag, :photo)
   end
 
   def edit
@@ -59,6 +54,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def item_params
+    params.require(:item).permit(:category, :brand, :price, :name, :gender, :comment, :tag, :photo)
+  end
 
   def edit_item_params
     params.require(:item).permit(:category, :brand, :price, :name, :gender, :comment, :tag, :photo)
