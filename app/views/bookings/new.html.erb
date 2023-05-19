@@ -16,7 +16,7 @@
           <%= f.input :start_date, html5: true, input_html: {min: (Date.today + 7) } %>
           <%= f.input :end_date, html5: true, input_html: {min: (Date.today + 7) }  %>
         </div>
-        <div class="col-6">
+        <div class="">
           <%= f.input :comment, placeholder: "Optional: Requests or notes can go here..." %>
         </div>
         <%= f.submit value:"Reserve", class:"button" %>
