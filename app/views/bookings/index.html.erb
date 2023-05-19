@@ -13,7 +13,7 @@
     </div>
     <div class=" d-flex mb-5">
       <div class="col">
-        <h3 class="text-center header">Reservation</h3>
+        <h3 class="text-center header">Reservations</h3>
         <div class="cards-half">
           <% @bookings.each do |booking| %>
             <div class="item-card">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="d-flex mb-2" >
                   <% if policy(booking).destroy? %>
-                    <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button" %>
+                    <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Remove request?" }, class: "button button-space" %>
                   <% end %>
                 </div>
               </div>
