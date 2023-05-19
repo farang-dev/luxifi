@@ -102,6 +102,25 @@ body {
   }
 }
 
+.sloganposition {
+  position: absolute;
+  top:46%;
+  left:15%;
+  height: 67px;
+  width: 900px;
+
+
+}
+
+#slogan {
+  position: relative;
+  font-size: 65px;
+  opacity: 40%;
+  font-family: system-ui;
+  font-optical-sizing: auto;
+  color: white;
+
+}
 
 .overlayText {
   position: absolute;
