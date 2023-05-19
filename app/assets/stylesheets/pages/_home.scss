@@ -105,17 +105,25 @@ body {
 
 .overlayText {
   position: absolute;
-  top: 85%;
-  left: 47%;
-  z-index: 1;
+  top: 86%;
+  left: 44%;
+  border-radius: 500px;
+  background: none;
+  padding: 0px;
+  min-width: 148px;
+  border: 2px solid #d8d8d8;
+  text-align: center;
+
 }
 
+
+
 #topText {
-  color: white;
-  font-size: 30px;
+  color: rgb(229, 229, 229);
+  font-size: 24px;
   align-self: center;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
+  text-align: center;
 
 
 }
